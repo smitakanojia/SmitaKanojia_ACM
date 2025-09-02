@@ -1,1 +1,1 @@
-# SmitaKanojia_Frontend_UCInterview.
+# SmitaKanojia_IIC

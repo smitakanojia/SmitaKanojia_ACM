@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Networking Event | IIC DJSCE</title>
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B3C5D;
+  --white: #fff;
+  --light: #F5F7FA;
+  --text: #222;
+  --accent: #356aa6;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: var(--light);
+  color: var(--text);
+}
+/*header style*/
+.header {
+  background-color: var(--navy);
+  padding: 0.5rem 2rem;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+.logo {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.club-logo {
+  height: 50px;
+}
+.club_name {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.header_nav ul {
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 2rem;
+  margin: 0;
+}
+.header_nav a {
+  color: var(--white);
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.header_nav a:hover {
+  border-color: var(--white);
+}
+
+/*background style*/
+.bckg {
+  position: relative;
+  background: url('networking.png') center/cover no-repeat;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bckg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 60, 93, 0.6);
+}
+.bckg h1 {
+  position: relative;
+  color: var(--white);
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/*timer*/
+.countdown {
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 2rem auto;
+  max-width: 400px;
+}
+
+/*grid*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+.two_grids {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 900px) {
+  .two_grids {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*box*/
+.box {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+h2 {
+  color: var(--navy);
+  margin-top: 0;
+}
+
+/*registration form*/
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+form input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #357ABD;
+}
+
+/*schedule*/
+.timeline {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+}
+.timeline-time {
+  text-align: right;
+  font-weight: bold;
+  color: var(--navy);
+}
+.timeline-item {
+  background: var(--white);
+  padding: 1rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+}
+
+/*footer*/
+.footer_button {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.footer_button a {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.footer_button a:hover {
+  background: var(--accent);
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="iic_logo.jpg" alt="IIC Logo" class="club-logo">
+      <span class="club_name">Institution's Innovation Club<br>DJSCE</span>
+    </div>
+    <nav class="header_nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="bckg"></section>
+
+<div class="countdown">
+  Event starts in: <span id="timer">Loading...</span>
+</div>
+
+<div class="container">
+
+  <div class="two_grids">
+    <div class="box">
+      <h2>About the Event</h2>
+      <p>
+        This curated evening is designed for 20 ambitious students passionate about entrepreneurship, innovation, and building meaningful networks. 
+        Kick off with dynamic icebreakers and speed networking, then dive into collaborative discussions on startup ideas, problem-solving, and innovation in campus life. 
+        Industry mentors and successful alumni will share insights, review your pitches, and help refine your vision. 
+        The night concludes with an open networking mixer to forge lasting connections.
+      </p>
+      <h3>Event Details</h3>
+      <ul>
+        <li><strong>Date:</strong> Saturday, 20 September, 2025</li>
+        <li><strong>Time:</strong> 5:30 PM – 8:00 PM</li>
+        <li><strong>Venue:</strong> Library hall, DJ Sanghvi</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h2 >Register Now</h2>
+      <form onsubmit="alert('Thanks for registering!'); return false;">
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Mobile Number" required pattern="[0-9]{10}">
+        <input type="text" placeholder="College / Dept." required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:2rem;">
+    <h2>Event Schedule</h2>
+    <div class="timeline">
+      <div class="timeline-time">5:30 PM</div>
+      <div class="timeline-item">Welcome & Introduction</div>
+
+      <div class="timeline-time">5:45 PM</div>
+      <div class="timeline-item">Icebreaker & Speed Networking</div>
+
+      <div class="timeline-time">6:15 PM</div>
+      <div class="timeline-item">Panel Talk – "From Idea to Impact"</div>
+
+      <div class="timeline-time">6:45 PM</div>
+      <div class="timeline-item">Innovation Challenge</div>
+
+      <div class="timeline-time">7:15 PM</div>
+      <div class="timeline-item">Mentor Feedback & Pitch Refinement</div>
+            <div class="timeline-time">7:45 PM</div>
+      <div class="timeline-item">Closing Remarks & Open Networking</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:2rem;">
+    <h2>Who Should Join</h2>
+    <ul>
+      <li>Students with basic HTML/CSS skills</li>
+      <li>Familiarity with at least one CSS/JS framework</li>
+      <li>Interest in entrepreneurship and innovation</li>
+      <li>Team players eager to collaborate</li>
+    </ul>
+  </div>
+
+  <div class="box" style="margin-top:2rem;">
+    <h2>Rules & Guidelines</h2>
+    <ul>
+      <li>Limited to 20 participants – first come, first served</li>
+      <li>Arrive 10 minutes early</li>
+      <li>Respect time limits during activities</li>
+      <li>Maintain a collaborative, respectful environment</li>
+    </ul>
+  </div>
+
+  <div class="footer_button">
+    <a href="#">More Events</a>
+    <a href="#">Register Now</a>
+  </div>
+
+</div>
+<!--Countdown logic-->
+<script>
+  const eventDate = new Date("September 20, 2025 17:30:00").getTime();
+  const timerElement = document.getElementById("timer");
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      timerElement.innerHTML = "The event has started!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    timerElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+</script>
+
+</body>
+</html>
